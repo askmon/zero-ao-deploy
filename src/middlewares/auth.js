@@ -18,12 +18,13 @@ const handleError = error => {
   })
 }
 
+const setUserInState = ctx => user =>
+  (ctx.state.user = user)
+
 module.exports = (ctx, next) => {
   const token = extractToken(ctx)
   return verify(token)
-    // in case we need the information inside the token:
-    // set it in ctx.state so it is available to the next middlewares/handlers
-    // .then(({ id }) => (ctx.state.user = id))
+    .then(setUserInState(ctx))
     .catch(handleError)
     .then(next)
 }
