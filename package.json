@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run sequelize:migrate && node src/index.js",
-    "dev": "NODE_ENV=dev nodemon --inspect=0.0.0.0 src/index.js",
+    "dev": "cross-env NODE_ENV=dev nodemon --inspect=0.0.0.0 src/index.js",
     "lint": "eslint ./src ./config --ext .json --ext .js --fix",
     "sequelize:migrate": "sequelize db:migrate --env database"
   },
@@ -37,14 +37,15 @@
     "sequelize-cli": "^5.5.1"
   },
   "devDependencies": {
+    "cross-env": "^6.0.3",
     "dotenv": "^8.2.0",
-    "nodemon": "^2.0.0",
     "eslint": "^6.4.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-json": "^1.4.0",
     "eslint-plugin-node": "^10.0.0",
     "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1"
+    "eslint-plugin-standard": "^4.0.1",
+    "nodemon": "^2.0.0"
   }
 }
