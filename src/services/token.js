@@ -7,7 +7,8 @@ const signOptions = {
 }
 
 const sign = payload =>
-  jwt.sign(payload,
+  jwt.sign(
+    payload,
     config.jwt.privateKey,
     signOptions
   )
