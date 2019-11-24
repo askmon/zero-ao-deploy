@@ -2,7 +2,7 @@ const Router = require('koa-router')
 
 // middlewares
 const error = require('./middlewares/error')
-const authenticated = require('./middlewares/auth')
+const authenticated = require('./middlewares/firebase-auth')
 const authorized = require('./middlewares/authorization')
 
 // handlers
